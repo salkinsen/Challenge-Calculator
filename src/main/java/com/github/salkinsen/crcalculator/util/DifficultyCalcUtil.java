@@ -19,9 +19,12 @@ public class DifficultyCalcUtil {
 
 
     /**
-     * @param pcGroups    Must all have valid levels (1 - 20). Must include at least one group with playerAmount > 0.
-     * @param enemyGroups Must include at least one group with enemyAmount > 0 and weaker == false.
-     * @return
+     * Calculates the difficulty of the encounter for the given player character groups and enemy groups.
+     * Based on the algorithm presented in the Dungeon Master's Guide for D&D 5th edition.
+     *
+     * @param pcGroups    must all have valid levels (1 - 20). Must include at least one group with playerAmount > 0.
+     * @param enemyGroups must include at least one group with enemyAmount > 0 and weaker == false.
+     * @return  the result including totalExp, totalAdjustedExp and encounterDifficulty
      */
     public static DifficultyResult calculateDifficulty(List<PCGroup> pcGroups, List<EnemyGroup> enemyGroups) {
 
@@ -38,13 +41,13 @@ public class DifficultyCalcUtil {
         }
 
 
-        PartyExpThreshold partyExpThreshold = determinePartyExpThresholds(pcGroups);
         int totalEnemyExp = calcTotalEnemyExp(enemyGroups);
         int adjustedEnemyExp = calcAdjustedEnemyExp(enemyGroups, pcGroups, totalEnemyExp);
 
+        PartyExpThreshold partyExpThreshold = determinePartyExpThresholds(pcGroups);
+        String difficulty = determineEncounterDifficulty(adjustedEnemyExp, partyExpThreshold);
 
-        // TODO: implement!
-        return new DifficultyResult();
+        return new DifficultyResult(totalEnemyExp, adjustedEnemyExp, difficulty);
     }
 
     private static PartyExpThreshold determinePartyExpThresholds(List<PCGroup> pcGroups) {
@@ -103,6 +106,23 @@ public class DifficultyCalcUtil {
         }
 
         return Math.round(multiplier * totalEnemyExp);
+    }
+
+    private static String determineEncounterDifficulty(int adjustedEnemyExp, PartyExpThreshold partyExpThreshold) {
+
+        String result;
+        if (partyExpThreshold.getDeadly() <= adjustedEnemyExp) {
+            result = "Deadly";
+        } else if (partyExpThreshold.getHard() <= adjustedEnemyExp) {
+            result = "Hard";
+        } else if (partyExpThreshold.getMedium() <= adjustedEnemyExp) {
+            result = "Medium";
+        } else {
+            result = "Easy";
+        }
+
+        return result;
+
     }
 
 }

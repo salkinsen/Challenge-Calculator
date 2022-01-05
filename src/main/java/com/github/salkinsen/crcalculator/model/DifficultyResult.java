@@ -9,6 +9,12 @@ public class DifficultyResult {
     private int totalAdjustedExp;
     private String encounterDifficulty;
 
+    public DifficultyResult(int totalExp, int totalAdjustedExp, String encounterDifficulty) {
+        this.totalExp = totalExp;
+        this.totalAdjustedExp = totalAdjustedExp;
+        this.encounterDifficulty = encounterDifficulty;
+    }
+
     public int getTotalExp() {
         return totalExp;
     }
