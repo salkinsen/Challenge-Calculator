@@ -15,9 +15,6 @@ public class DataModel {
             FXCollections.observableArrayList(e -> new Observable[]{e.enemyAmountProperty(), e.expProperty(), e.weakerProperty()});
 
     public DataModel() {
-        pcGroups.add(new PCGroup(3, 1));
-        pcGroups.add(new PCGroup(1, 2));
-        enemyGroups.add(new EnemyGroup("Orc", 30, 10, true));
     }
 
     public ObservableList<PCGroup> getPcGroups() {

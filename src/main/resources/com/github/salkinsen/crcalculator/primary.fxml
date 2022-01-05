@@ -96,14 +96,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label text="Total number of Player Characters" />
-                  <Label text="Level" GridPane.rowIndex="1" />
-                  <Label fx:id="totalPCsLabel" GridPane.columnIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="Total Number of PCs" GridPane.rowIndex="2" />
-                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Total Experience" GridPane.rowIndex="1" />
+                  <Label fx:id="totalPCsLabel" text="Label" GridPane.columnIndex="1" />
+                  <Label fx:id="totalExpLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Total Adjusted Experience" GridPane.rowIndex="2" />
+                  <Label fx:id="totalAdjExpLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Encounter Difficulty" GridPane.rowIndex="3" />
+                  <Label fx:id="encounterDiffLabel" style="-fx-font-weight: bold;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
          </children>

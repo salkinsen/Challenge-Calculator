@@ -3,8 +3,10 @@ package com.github.salkinsen.crcalculator.controller;
 
 import com.github.salkinsen.crcalculator.App;
 import com.github.salkinsen.crcalculator.model.DataModel;
+import com.github.salkinsen.crcalculator.model.DifficultyResult;
 import com.github.salkinsen.crcalculator.model.EnemyGroup;
 import com.github.salkinsen.crcalculator.model.PCGroup;
+import com.github.salkinsen.crcalculator.util.DifficultyCalcUtil;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.ListChangeListener;
@@ -12,9 +14,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 
+import java.util.List;
+
 public class PrimaryController {
 
     private App app;
+    private DataModel dataModel = new DataModel();
 
     // PC Groups Table and Buttons
     @FXML
@@ -27,12 +32,6 @@ public class PrimaryController {
     private Button deletePCGroupButton;
     @FXML
     private Button editPCGroupButton;
-    @FXML
-    private Label totalPCsLabel;
-    @FXML
-    private Label resultInfoLabel;
-
-    private DataModel dataModel = new DataModel();
 
     // Enemy Groups Table, Label and Buttons
     @FXML
@@ -49,6 +48,19 @@ public class PrimaryController {
     private Button deleteEnemyButton;
     @FXML
     private Button editEnemyButton;
+
+    // Result Labels
+    @FXML
+    private Label resultInfoLabel;
+    @FXML
+    private Label totalPCsLabel;
+    @FXML
+    private Label totalExpLabel;
+    @FXML
+    private Label totalAdjExpLabel;
+    @FXML
+    private Label encounterDiffLabel;
+
 
 
     public PrimaryController() {
@@ -78,16 +90,22 @@ public class PrimaryController {
     }
 
     private void updateResult() {
-        // TODO: finish implementing
-        // TODO: call DifficultyCalcUtil
-        boolean significantEnemies = false;
         if (dataModel.getPcGroups().stream().noneMatch(p -> p.getPlayerAmount() > 0)) {
             resultInfoLabel.setText("Waiting for input... Need at least on PC.");
+            totalExpLabel.setText("");
+            totalAdjExpLabel.setText("");
+            encounterDiffLabel.setText("");
         } else if (dataModel.getEnemyGroups().stream().noneMatch(e -> e.getEnemyAmount() > 0 && !e.isWeaker())) {
             resultInfoLabel.setText("Waiting for input... Need at least one enemy that is not marked 'Weaker'.");
+            totalExpLabel.setText("");
+            totalAdjExpLabel.setText("");
+            encounterDiffLabel.setText("");
         } else {
-            //TODO: call DifficultyCalcUtil
+            DifficultyResult result = DifficultyCalcUtil.calculateDifficulty(dataModel.getPcGroups(), dataModel.getEnemyGroups());
             resultInfoLabel.setText("Results");
+            totalExpLabel.setText(String.valueOf(result.getTotalExp()));
+            totalAdjExpLabel.setText(String.valueOf(result.getTotalAdjustedExp()));
+            encounterDiffLabel.setText(result.getEncounterDifficulty());
         }
 
 
