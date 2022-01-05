@@ -8,12 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="crcalculator" />
         <module name="Challenge-Calculator" />
+        <module name="cr-calculator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Challenge-Calculator" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Challenge-Calculator" options="--add-modules java.base" />
+      <module name="Challenge-Calculator" options="" />
     </option>
   </component>
 </project>

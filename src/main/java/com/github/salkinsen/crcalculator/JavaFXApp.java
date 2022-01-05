@@ -18,12 +18,12 @@ import java.security.InvalidParameterException;
 /**
  * JavaFX App
  */
-public class App extends Application {
+public class JavaFXApp extends Application {
 
     private Stage primaryStage;
     private static Scene mainScene;
 
-    public App() {
+    public JavaFXApp() {
     }
 
 
@@ -32,7 +32,7 @@ public class App extends Application {
 
         this.primaryStage = primaryStage;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(JavaFXApp.class.getResource("primary.fxml"));
         mainScene = new Scene(fxmlLoader.load());
         PrimaryController controller = fxmlLoader.getController();
         controller.setApp(this);    // set up reference in controller to App
@@ -82,7 +82,7 @@ public class App extends Application {
         try {
 
             // Create stage and scene. Set scene.
-            FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml));
+            FXMLLoader loader = new FXMLLoader(JavaFXApp.class.getResource(fxml));
             Scene editScene = new Scene(loader.load());
             Stage dialogStage = new Stage();
             dialogStage.setTitle(title);

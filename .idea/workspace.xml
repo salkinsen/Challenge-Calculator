@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Challenge-Calculator:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017b8581-4337-44e0-bff8-e48dbb30eb4b" name="Default Changelist" comment="finished implementing difficulty algorithm">
+    <list default="true" id="017b8581-4337-44e0-bff8-e48dbb30eb4b" name="Default Changelist" comment="added possibility to create executable jar with maven-shade-plugin and updated Readme accordingly">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ui-example.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/salkinsen/crcalculator/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/salkinsen/crcalculator/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/salkinsen/crcalculator/JavaFXApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/salkinsen/crcalculator/controller/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/salkinsen/crcalculator/controller/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/salkinsen/crcalculator/model/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/salkinsen/crcalculator/model/DataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/github/salkinsen/crcalculator/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/github/salkinsen/crcalculator/primary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +87,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/salkinsen/crcalculator/util/DifficultyCalcUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/salkinsen/crcalculator/util/DifficultyCalcUtilTest.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="usePluginRegistry" value="true" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -198,29 +216,38 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.github.salkinsen.crcalculator.util" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.github.salkinsen.crcalculator" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\IdeaProjects\Challenge-Calculator\src\main\java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\IdeaProjects\Challenge-Calculator\src\main\resources" />
+      <recent name="D:\Programming\IdeaProjects\Challenge-Calculator\images" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.github.salkinsen.crcalculator" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.github.salkinsen.crcalculator.util" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.JavaFXApp">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.salkinsen.crcalculator.App" />
+      <module name="crcalculator" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.github.salkinsen.crcalculator.*" />
@@ -232,39 +259,39 @@
       </method>
     </configuration>
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.salkinsen.crcalculator.App" />
+      <module name="crcalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.salkinsen.crcalculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaFXApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.salkinsen.crcalculator.JavaFXApp" />
+      <module name="Challenge-Calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.salkinsen.crcalculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaFXApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.github.salkinsen.crcalculator.App" />
+      <option name="MAIN_CLASS_NAME" value="com.github.salkinsen.crcalculator.JavaFXApp" />
       <module name="Challenge-Calculator" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.github.salkinsen.crcalculator.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.salkinsen.crcalculator.App" />
-      <module name="crcalculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.salkinsen.crcalculator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.salkinsen.crcalculator.App" />
-      <module name="crcalculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.salkinsen.crcalculator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -321,8 +348,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="Application.App (1)" />
+        <item itemvalue="Application.JavaFXApp" />
+        <item itemvalue="Application.JavaFXApp" />
         <item itemvalue="JUnit.DifficultyCalcUtilTest.calculateDifficulty3 (1)" />
         <item itemvalue="JUnit.DifficultyCalcUtilTest (1)" />
         <item itemvalue="JUnit.DifficultyCalcUtilTest.calculateDifficulty5" />
@@ -355,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641413156789</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update result labels to show result">
+      <created>1641413507975</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641413507975</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -441,11 +475,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="switch to Java 11" />
     <MESSAGE value="finished implementing difficulty algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished implementing difficulty algorithm" />
+    <MESSAGE value="update result labels to show result" />
+    <MESSAGE value="added possibility to create executable jar with maven-shade-plugin and updated Readme accordingly" />
+    <option name="LAST_COMMIT_MESSAGE" value="added possibility to create executable jar with maven-shade-plugin and updated Readme accordingly" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/github/salkinsen/crcalculator/primary-backup.fxml" />

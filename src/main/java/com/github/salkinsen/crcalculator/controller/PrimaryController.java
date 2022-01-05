@@ -1,7 +1,7 @@
 package com.github.salkinsen.crcalculator.controller;
 
 
-import com.github.salkinsen.crcalculator.App;
+import com.github.salkinsen.crcalculator.JavaFXApp;
 import com.github.salkinsen.crcalculator.model.DataModel;
 import com.github.salkinsen.crcalculator.model.DifficultyResult;
 import com.github.salkinsen.crcalculator.model.EnemyGroup;
@@ -14,11 +14,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 
-import java.util.List;
-
 public class PrimaryController {
 
-    private App app;
+    private JavaFXApp app;
     private DataModel dataModel = new DataModel();
 
     // PC Groups Table and Buttons
@@ -154,7 +152,7 @@ public class PrimaryController {
      *
      * @param app
      */
-    public void setApp(App app) {
+    public void setApp(JavaFXApp app) {
         this.app = app;
     }
 
