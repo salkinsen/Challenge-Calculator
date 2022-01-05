@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="467.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.salkinsen.crcalculator.controller.PrimaryController">
+<SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="467.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.salkinsen.crcalculator.controller.PrimaryController">
    <items>
       <AnchorPane>
          <children>
