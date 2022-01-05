@@ -5,6 +5,8 @@ This program can be used to determine how challenging an encounter in Dungeons &
 <br />
 ![Example Image of UI](images/ui-example.png)
 
+Enemies that are unlikely to significantly affect the overall difficulty should be marked as 'weaker'.
+
 ## Run
 You can easily run the application with maven:
 ```
